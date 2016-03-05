@@ -1,0 +1,14 @@
+{
+  "name": "WhotoBlock_Bot",
+  "version": "20160305",
+  "description": "WhotoBlock_Bot",
+  "main": "app.js",
+  "author": {
+    "name": "wfjsw",
+    "email": ""
+  },
+  "dependencies": {
+    "jsonfile": "^2.2.3",
+    "node-telegram-bot-api": "^0.20.1"
+  }
+}

@@ -10,8 +10,9 @@ var blacklist = confreader.readFileSync(blfile);
 var config = require('./config.json');
 var tg = new Telegram(config.tg_bot_api_key, { polling: true });
 
-var tgid, tgusername;
+var tgid, tgusername, errcount;
 var inittime = Math.round(new Date().getTime() / 1000);
+errcount = 0
 
 process.on('SIGINT', function (code) {
     console.log('About to exit with code:', code);
@@ -89,9 +90,10 @@ function processInGroup(msg){
 
 // Universal Message Handler
 tg.on('message', function (msg) {
+    if (msg.date < inittime) return;
     if (config.admins.indexOf(msg.from.id) > -1)
         processAdmin(msg);
-    else if (msg.chat.type == 'private')
+    if (msg.chat.type == 'private')
         processPrivate(msg);
     else if ((msg.chat.type == 'group') || (msg.chat.type == 'supergroup'))
         processInGroup(msg);
@@ -100,5 +102,11 @@ tg.on('message', function (msg) {
 tg.getMe().then(function (ret) {
     tgid = ret.id;
     tgusername = ret.username;
-    console.log('PROJECT AKARIN INITATED');
+    console.log('PROJECT WTB INITATED');
+});
+
+tg.on('error', function (msg) {
+    console.log('Error occured.');
+    errcount += 1;
+    if (errcount > 5) process.exit();
 });

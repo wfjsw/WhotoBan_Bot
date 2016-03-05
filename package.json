@@ -1,6 +1,6 @@
 {
   "name": "WhotoBlock_Bot",
-  "version": "20160305",
+  "version": "0.0.1",
   "description": "WhotoBlock_Bot",
   "main": "app.js",
   "author": {

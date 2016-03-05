@@ -59,7 +59,7 @@ function processPrivate(msg){
             var message = 'You are in the blacklist!\n';
             message += 'Details goes here: ';
             message += 'https://telegram.me/' + config.chan_name + '/' + blacklist[msg.from.id];
-            tg.sendMessage(msg.chat.id, message);
+            tg.sendMessage(msg.chat.id, message, { disable_web_page_preview: true });
         } else {
             var message = 'You are not in the blacklist.\n';
             tg.sendMessage(msg.chat.id, message);
@@ -69,7 +69,7 @@ function processPrivate(msg){
             var message = 'This guy is in the blacklist!\n';
             message += 'Details goes here: ';
             message += 'https://telegram.me/' + config.chan_name + '/' + blacklist[msg.forward_from.id];
-            tg.sendMessage(msg.chat.id, message);
+            tg.sendMessage(msg.chat.id, message, { disable_web_page_preview: true });
         } else {
             var message = 'This guy is not in the blacklist.\n';
             tg.sendMessage(msg.chat.id, message);
@@ -84,7 +84,7 @@ function processInGroup(msg){
             message += 'This guy is in the blacklist of Project Who-to-Ban\n';
             message += 'Details goes here: ';
             message += 'https://telegram.me/' + config.chan_name + '/' + blacklist[msg.new_chat_participant.id];
-            tg.sendMessage(msg.chat.id, message, {reply_to_message_id: msg.message_id});
+            tg.sendMessage(msg.chat.id, message, {reply_to_message_id: msg.message_id, disable_web_page_preview: true});
         } 
 }
 

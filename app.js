@@ -81,7 +81,7 @@ function processInGroup(msg){
     if (msg.new_chat_participant) 
         if (blacklist[msg.new_chat_participant.id]) {
             var message = 'WARNING!\n';
-            message += 'This guy is in the blacklist of Project Who-to-Ban';
+            message += 'This guy is in the blacklist of Project Who-to-Ban\n';
             message += 'Details goes here: ';
             message += 'https://telegram.me/' + config.chan_name + '/' + blacklist[msg.new_chat_participant.id];
             tg.sendMessage(msg.chat.id, message, {reply_to_message_id: msg.message_id});

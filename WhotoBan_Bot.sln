@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "WhotoBlock_Bot", "WhotoBlock_Bot.njsproj", "{348003D2-0AD0-48A6-A45C-F02F28AB6539}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "WhotoBan_Bot", "WhotoBan_Bot.njsproj", "{348003D2-0AD0-48A6-A45C-F02F28AB6539}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
